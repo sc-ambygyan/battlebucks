@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8963C1412CBF7888007DB3BA /* battlebucksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1402CBF7888007DB3BA /* battlebucksApp.swift */; };
-		8963C1432CBF7888007DB3BA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1422CBF7888007DB3BA /* ContentView.swift */; };
+		8963C1432CBF7888007DB3BA /* GallaryScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1422CBF7888007DB3BA /* GallaryScreen.swift */; };
 		8963C1452CBF788B007DB3BA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8963C1442CBF788B007DB3BA /* Assets.xcassets */; };
 		8963C1482CBF788B007DB3BA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8963C1472CBF788B007DB3BA /* Preview Assets.xcassets */; };
 		8963C1522CBF788C007DB3BA /* battlebucksTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1512CBF788C007DB3BA /* battlebucksTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		8963C13D2CBF7888007DB3BA /* battlebucks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = battlebucks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8963C1402CBF7888007DB3BA /* battlebucksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = battlebucksApp.swift; sourceTree = "<group>"; };
-		8963C1422CBF7888007DB3BA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8963C1422CBF7888007DB3BA /* GallaryScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryScreen.swift; sourceTree = "<group>"; };
 		8963C1442CBF788B007DB3BA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8963C1472CBF788B007DB3BA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8963C14D2CBF788C007DB3BA /* battlebucksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = battlebucksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +44,7 @@
 		8963C1572CBF788C007DB3BA /* battlebucksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = battlebucksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8963C15B2CBF788C007DB3BA /* battlebucksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = battlebucksUITests.swift; sourceTree = "<group>"; };
 		8963C15D2CBF788C007DB3BA /* battlebucksUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = battlebucksUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8963C1702CBF854C007DB3BA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +95,11 @@
 		8963C13F2CBF7888007DB3BA /* battlebucks */ = {
 			isa = PBXGroup;
 			children = (
-				8963C1402CBF7888007DB3BA /* battlebucksApp.swift */,
-				8963C1422CBF7888007DB3BA /* ContentView.swift */,
+				8963C1702CBF854C007DB3BA /* Info.plist */,
 				8963C1442CBF788B007DB3BA /* Assets.xcassets */,
+				8963C16B2CBF7A71007DB3BA /* Screens */,
+				8963C16A2CBF7A17007DB3BA /* Core */,
+				8963C1402CBF7888007DB3BA /* battlebucksApp.swift */,
 				8963C1462CBF788B007DB3BA /* Preview Content */,
 			);
 			path = battlebucks;
@@ -125,6 +128,53 @@
 				8963C15D2CBF788C007DB3BA /* battlebucksUITestsLaunchTests.swift */,
 			);
 			path = battlebucksUITests;
+			sourceTree = "<group>";
+		};
+		8963C16A2CBF7A17007DB3BA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8963C16E2CBF7B37007DB3BA /* Services */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		8963C16B2CBF7A71007DB3BA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				8963C16C2CBF7AAF007DB3BA /* Gallary */,
+				8963C16D2CBF7B00007DB3BA /* Details */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		8963C16C2CBF7AAF007DB3BA /* Gallary */ = {
+			isa = PBXGroup;
+			children = (
+				8963C1422CBF7888007DB3BA /* GallaryScreen.swift */,
+			);
+			path = Gallary;
+			sourceTree = "<group>";
+		};
+		8963C16D2CBF7B00007DB3BA /* Details */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		8963C16E2CBF7B37007DB3BA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				8963C16F2CBF7B45007DB3BA /* Network */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		8963C16F2CBF7B45007DB3BA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +307,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8963C1432CBF7888007DB3BA /* ContentView.swift in Sources */,
+				8963C1432CBF7888007DB3BA /* GallaryScreen.swift in Sources */,
 				8963C1412CBF7888007DB3BA /* battlebucksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -425,9 +475,9 @@
 				DEVELOPMENT_TEAM = 29FKH92269;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = battlebucks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -454,9 +504,9 @@
 				DEVELOPMENT_TEAM = 29FKH92269;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = battlebucks/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
