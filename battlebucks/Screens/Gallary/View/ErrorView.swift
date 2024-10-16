@@ -1,8 +1,8 @@
 //
-//  ErrorView.swift
-//  NewsAPI
+//  .swift
+//  battlebucks
 //
-//  Created by Tunde on 10/02/2021.
+//  Created by Ambarish Gyanendra on 16/10/24.
 //
 
 import SwiftUI
@@ -23,17 +23,17 @@ struct ErrorView: View {
     
     var body: some View {
         VStack(spacing: 12) {
-            Image(systemName: "exclamationmark.icloud.fill")
+            Image(systemName: "exclamationmark.triangle.fill")
                 .foregroundColor(.gray)
-                .font(.system(size: 50, weight: .heavy))
-            Text("Ooops...")
-                .font(.system(size: 30, weight: .heavy))
+                .font(.system(size: 48, weight: .heavy))
+            Text("Error!!!")
+                .font(.system(size: 20, weight: .heavy))
             Text(error.localizedDescription)
-                .font(.system(size: 15, weight: .regular))
+                .font(.system(size: 14, weight: .regular))
                 .foregroundColor(.gray)
                 .multilineTextAlignment(.center)
-                .padding(.bottom, 10)
-            Button("Retry") {
+                .padding(.bottom, 8)
+            Button("Try again") {
                 handler()
             }
             .padding(.horizontal, 22)

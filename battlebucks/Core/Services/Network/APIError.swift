@@ -1,10 +1,9 @@
 //
 //  APIError.swift
-//  NewsAPI
+//  battlebucks
 //
-//  Created by Tunde on 08/02/2021.
+//  Created by Ambarish Gyanendra on 16/10/24..
 //
-
 import Foundation
 
 enum APIError: Error {
@@ -17,11 +16,11 @@ extension APIError: LocalizedError {
     public var errorDescription: String? {
         switch self {
         case .decodingError:
-            return "Failed to decode the error from the service"
+            return "data parsing failed"
         case .errorCode(let code):
-            return "\(code) - Something went wrong"
+            return "encountered error code: \(code)"
         case .unknown:
-            return "The error is unknown"
+            return "Something went wrong"
         }
     }
 }

@@ -8,45 +8,34 @@
 import Foundation
 import Combine
 
-protocol ArticleViewModel {
-    func getArticles()
+protocol GalleryViewModelProtocol {
+    func getPhotos()
 }
 
-enum ResultState {
-    case loading
-    case failed(error: Error)
-    case success(content: [Article])
-}
-
-
-class ArticleViewModelImpl: ObservableObject, ArticleViewModel {
+class GalleryViewModel: ObservableObject, GalleryViewModelProtocol {
+    @Published private(set) var apiState: APIState = .loading
+    private var cancellables = Set<AnyCancellable>()
     
     private let service: NetworkService
-
-    private(set) var articles = [Article]()
-    @Published private(set) var state: ResultState = .loading
-
-    private var cancellables = Set<AnyCancellable>()
-
+    private(set) var photos = [PhotoModel]()
+    
     init(service: NetworkService) {
         self.service = service
     }
     
-    func getArticles() {
-        
-        self.state = .loading
-        
+    func getPhotos() {
+        self.apiState = .loading
         let cancellable = self.service
-            .request(from: .getNews)
+            .request(from: .photos)
             .sink { (res) in
                 switch res {
                 case .failure(let error):
-                    self.state = .failed(error: error)
+                    self.apiState = .failed(error: error)
                 case .finished:
-                    self.state = .success(content: self.articles)
+                    self.apiState = .success(content: self.photos)
                 }
             } receiveValue: { res in
-                self.articles = res.articles
+                self.photos = res
             }
         self.cancellables.insert(cancellable)
     }

@@ -1,43 +1,41 @@
 //
-//  ArticleEndpoint.swift
-//  NewsAPI
+//  ApiEndpoint.swift
+//  battlebucks
 //
-//  Created by Tunde on 08/02/2021.
+//  Created by Ambarish Gyanendra on 16/10/24.
 //
 
 import Foundation
 
-protocol APIBuilder {
+protocol APIBuilderProtocol {
     var urlRequest: URLRequest { get }
     var baseUrl: URL { get }
     var path: String { get }
 }
 
 enum ApiEndpoint {
-    case getNews
+    case photos
 }
 
-extension ApiEndpoint: APIBuilder {
+extension ApiEndpoint: APIBuilderProtocol {
 
     var baseUrl: URL {
+        let baseUrl = "https://jsonplaceholder.typicode.com"
         switch self {
-        case .getNews:
-            return URL(string: "https://api.lil.software")!
+        case .photos:
+            return URL(string: baseUrl)!
         }
     }
     
     var path: String {
         switch self {
-        case .getNews:
-            return "/news"
+        case .photos:
+            return "/photos"
 
         }
     }
     
     var urlRequest: URLRequest {
-        switch self {
-        case .getNews:           
-            return URLRequest(url: self.baseUrl.appendingPathComponent(self.path))
-        }
+        return URLRequest(url: self.baseUrl.appendingPathComponent(self.path))
     }
 }
