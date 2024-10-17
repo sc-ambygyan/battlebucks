@@ -23,6 +23,12 @@
 		8963C18A2CC04E88007DB3BA /* ApiState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1892CC04E88007DB3BA /* ApiState.swift */; };
 		8963C18D2CC055A7007DB3BA /* AsyncCachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C18C2CC055A7007DB3BA /* AsyncCachedImage.swift */; };
 		8963C1912CC059B7007DB3BA /* DetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1902CC059B7007DB3BA /* DetailScreen.swift */; };
+		8963C1952CC06D09007DB3BA /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1942CC06D09007DB3BA /* ImageLoader.swift */; };
+		8963C1972CC06D68007DB3BA /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1962CC06D68007DB3BA /* ImageCache.swift */; };
+		8963C1992CC06E10007DB3BA /* EnvironmentValuesExtention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C1982CC06E10007DB3BA /* EnvironmentValuesExtention.swift */; };
+		8963C19B2CC06E3D007DB3BA /* ImageCacheKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C19A2CC06E3D007DB3BA /* ImageCacheKey.swift */; };
+		8963C19D2CC10525007DB3BA /* GalleryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C19C2CC10524007DB3BA /* GalleryViewModelTests.swift */; };
+		8963C19F2CC105ED007DB3BA /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8963C19E2CC105ED007DB3BA /* MockNetworkService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +69,13 @@
 		8963C1892CC04E88007DB3BA /* ApiState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiState.swift; sourceTree = "<group>"; };
 		8963C18C2CC055A7007DB3BA /* AsyncCachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncCachedImage.swift; sourceTree = "<group>"; };
 		8963C1902CC059B7007DB3BA /* DetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailScreen.swift; sourceTree = "<group>"; };
+		8963C1942CC06D09007DB3BA /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		8963C1962CC06D68007DB3BA /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
+		8963C1982CC06E10007DB3BA /* EnvironmentValuesExtention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvironmentValuesExtention.swift; sourceTree = "<group>"; };
+		8963C19A2CC06E3D007DB3BA /* ImageCacheKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheKey.swift; sourceTree = "<group>"; };
+		8963C19C2CC10524007DB3BA /* GalleryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewModelTests.swift; sourceTree = "<group>"; };
+		8963C19E2CC105ED007DB3BA /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		8963C1A02CC106CF007DB3BA /* Photos.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Photos.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +148,9 @@
 			isa = PBXGroup;
 			children = (
 				8963C1512CBF788C007DB3BA /* battlebucksTests.swift */,
+				8963C19C2CC10524007DB3BA /* GalleryViewModelTests.swift */,
+				8963C19E2CC105ED007DB3BA /* MockNetworkService.swift */,
+				8963C1A02CC106CF007DB3BA /* Photos.json */,
 			);
 			path = battlebucksTests;
 			sourceTree = "<group>";
@@ -256,6 +272,10 @@
 			isa = PBXGroup;
 			children = (
 				8963C18C2CC055A7007DB3BA /* AsyncCachedImage.swift */,
+				8963C1942CC06D09007DB3BA /* ImageLoader.swift */,
+				8963C1962CC06D68007DB3BA /* ImageCache.swift */,
+				8963C1982CC06E10007DB3BA /* EnvironmentValuesExtention.swift */,
+				8963C19A2CC06E3D007DB3BA /* ImageCacheKey.swift */,
 			);
 			path = AsyncCachedImage;
 			sourceTree = "<group>";
@@ -391,7 +411,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				8963C1432CBF7888007DB3BA /* GalleryScreen.swift in Sources */,
+				8963C1972CC06D68007DB3BA /* ImageCache.swift in Sources */,
 				8963C1862CC04424007DB3BA /* ApiEndpoint.swift in Sources */,
+				8963C1952CC06D09007DB3BA /* ImageLoader.swift in Sources */,
 				8963C18A2CC04E88007DB3BA /* ApiState.swift in Sources */,
 				8963C17E2CC043A6007DB3BA /* PhotoModel.swift in Sources */,
 				8963C1822CC04402007DB3BA /* NetworkService.swift in Sources */,
@@ -401,6 +423,8 @@
 				8963C18D2CC055A7007DB3BA /* AsyncCachedImage.swift in Sources */,
 				8963C1912CC059B7007DB3BA /* DetailScreen.swift in Sources */,
 				8963C17A2CC0437A007DB3BA /* ErrorView.swift in Sources */,
+				8963C19B2CC06E3D007DB3BA /* ImageCacheKey.swift in Sources */,
+				8963C1992CC06E10007DB3BA /* EnvironmentValuesExtention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -408,7 +432,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8963C19F2CC105ED007DB3BA /* MockNetworkService.swift in Sources */,
 				8963C1522CBF788C007DB3BA /* battlebucksTests.swift in Sources */,
+				8963C19D2CC10525007DB3BA /* GalleryViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

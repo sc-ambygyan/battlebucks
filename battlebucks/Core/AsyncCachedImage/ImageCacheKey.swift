@@ -6,3 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
+
+
+struct ImageCacheKey: EnvironmentKey {
+    static let defaultValue: ImageCache = TemporaryImageCache()
+}

@@ -19,6 +19,7 @@ struct GalleryScreen: View {
             switch viewModel.apiState {
             case .loading:
                 ProgressView()
+                
             case .failed(let error):
                 ErrorView(error: error) {
                     self.viewModel.getPhotos()
@@ -27,20 +28,20 @@ struct GalleryScreen: View {
                 NavigationView {
                     ScrollView {
                         LazyVGrid(columns: gridColumns) {
-                            ForEach(photos, id: \.id) { photoInfo in
-                                GeometryReader { geo in
-                                    NavigationLink(destination: DetailScreen()) {
-                                    //GridImageView(size: geo.size.width, photoInfo: photoInfo)
-//                                        Text(photoInfo.title)
+                            ForEach(Array(photos.enumerated()), id: \.offset) { (index, photoInfo) in
+                                    NavigationLink(destination: DetailScreen(selectedIndex: index, photos: photos)) {
+                                    
                                         AsyncCachedImage(url: URL(string: photoInfo.thumbnailURL)!,
                                                        placeholder: { ProgressView() },
                                                        image: { Image(uiImage: $0).resizable() })
+                                        .accessibilityIdentifier("photoId_\(photoInfo.id)")
                                     }
-                                }
                                 .cornerRadius(8.0)
                                 .aspectRatio(1, contentMode: .fit)
                             }
                         }
+                        .accessibilityIdentifier("photoGrid")
+                        .padding()
                     }
                     .navigationBarTitle("Image Gallery")
                     .navigationBarTitleDisplayMode(.inline)

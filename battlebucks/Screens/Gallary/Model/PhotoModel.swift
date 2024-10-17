@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - PhotoModelElement
-struct PhotoModel: Codable {
+struct PhotoModel: Codable, Hashable, Identifiable {
     let albumID: Int
     let id: Int
     let title: String

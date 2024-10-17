@@ -16,10 +16,10 @@ class GalleryViewModel: ObservableObject, GalleryViewModelProtocol {
     @Published private(set) var apiState: APIState = .loading
     private var cancellables = Set<AnyCancellable>()
     
-    private let service: NetworkService
+    private let service: NetworkServiceProtocol
     private(set) var photos = [PhotoModel]()
     
-    init(service: NetworkService) {
+    init(service: NetworkServiceProtocol) {
         self.service = service
     }
     
